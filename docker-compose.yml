@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    shm_size: 1gb
+    container_name: vxt-pop-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: playback
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+
+  grafana:
+    image: tbesesg/vxt-pop-grafana:0.2
+    container_name: vxt-pop-grafana
+    restart: unless-stopped
+    ports:
+      - "3007:3000"
+    depends_on:
+      - postgres
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+  ingest:
+    image: tbesesg/vxt-pop-ingest:0.1
+    container_name: vxt-pop-ingest
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: playback
+    volumes:
+      - ./csv_files:/app/csv_files
+      - ./processed:/app/processed
+
+volumes:
+  postgres_data:
+  grafana_data:

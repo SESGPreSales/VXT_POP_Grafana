@@ -15,3 +15,5 @@ The use just adds the Exported CSV filed to a folder, which is watched and autom
 ## How to setup
 
 tbc
+
+https://github.com/SESGPreSales/VXT_POP_Grafana
