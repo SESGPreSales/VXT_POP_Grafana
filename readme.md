@@ -60,7 +60,12 @@ docker compose up -d
 
 this will pull all needed images from docker hub, then start the containers.
 
+<img width="275" height="115" alt="image" src="https://github.com/user-attachments/assets/11d67339-6d4f-483a-9b25-39a24adbea3e" />
+
 3. Open a browser window and point it to: `http://localhost:3007`
+
+<img width="216" height="209" alt="image" src="https://github.com/user-attachments/assets/8a3b975d-7731-41fe-b2a4-611e2d1c3e2b" />
+
 
 ## How to use
 
@@ -69,5 +74,17 @@ this will pull all needed images from docker hub, then start the containers.
 1. Click on `01 Play Overview`
 
 <img width="430" height="203" alt="image" src="https://github.com/user-attachments/assets/40e7cbeb-3ae3-4b9a-b241-24cb6515c672" />
+If you haven't added any csv before, your dashboard will be empty
+<img width="857" height="396" alt="image" src="https://github.com/user-attachments/assets/d05fa396-ceff-485f-8547-2968e752b111" />
 
-If you already have some processed data, you should already see something now. If you should have data but nothing is shown, check for the date selector on the top right.
+Add csv files to the `csv_files` folder
+<img width="1088" height="408" alt="20260415-2010-21 6211124" src="https://github.com/user-attachments/assets/c9b85ca3-6ed3-4597-b01e-8bf0037d4885" />
+wait a moment, the data is ingested automatically
+
+> [!NOTE]
+> Check the date selector on the top right... your exported data might be outside of the date range, then nothing is displayed.
+
+If you already have some processed data, you should already see something now. 
+
+Clicking on the colored bar of a content play visualization, or on a device content count, allows you to move to a detailed summary about that one content or device 
+<img width="390" height="157" alt="image" src="https://github.com/user-attachments/assets/2536935a-e9f5-4e4a-8ef9-bad15cf54994" />
