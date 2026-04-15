@@ -41,7 +41,8 @@ cd VXT_POP_Grafana
 
 You should see these folder and files:
 
-![screenshot_2026-04-15_214138.png](/vxt/pop/screenshot_2026-04-15_214138.png)
+<img width="107" height="122" alt="image" src="https://github.com/user-attachments/assets/a50840dc-9409-4e3c-94fe-a4e9542d577d" />
+
 
 - csv_files
   - Place your csv files in here. This filder is watched all the time and the files are going to be processed in the next seconds. Just wait...
@@ -66,5 +67,7 @@ this will pull all needed images from docker hub, then start the containers.
 1. Login to grafana using default created admin user (`admin` / `admin`). You are now forced to change th admin password. The new password will persist container restarts.
 1. Click on `Dashboards` in the left navigation
 1. Click on `01 Play Overview`
+
+<img width="430" height="203" alt="image" src="https://github.com/user-attachments/assets/40e7cbeb-3ae3-4b9a-b241-24cb6515c672" />
 
 If you already have some processed data, you should already see something now. If you should have data but nothing is shown, check for the date selector on the top right.
