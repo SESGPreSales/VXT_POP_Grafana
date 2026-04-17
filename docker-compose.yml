@@ -1,8 +1,6 @@
-version: "3.9"
-
 services:
   postgres:
-    image: postgres:16
+    image: timescale/timescaledb:latest-pg15
     shm_size: 1gb
     container_name: vxt-pop-postgres
     restart: unless-stopped
@@ -15,7 +13,7 @@ services:
       - ./init-db:/docker-entrypoint-initdb.d
 
   grafana:
-    image: tbesesg/vxt-pop-grafana:0.2
+    image: tbesesg/vxt-pop-grafana:0.4
     container_name: vxt-pop-grafana
     restart: unless-stopped
     ports:

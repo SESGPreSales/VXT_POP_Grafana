@@ -1,10 +1,15 @@
+-- Enable TimescaleDB
+CREATE EXTENSION IF NOT EXISTS timescaledb;
+
+-- Drop existing table
 DROP TABLE IF EXISTS playback_events;
 
+-- Create table
 CREATE TABLE playback_events (
     id BIGSERIAL PRIMARY KEY,
 
     -- time
-    start_time TIMESTAMPTZ,
+    start_time TIMESTAMPTZ NOT NULL,
     end_time TIMESTAMPTZ,
     duration_ms INTEGER,
 
@@ -23,7 +28,7 @@ CREATE TABLE playback_events (
     -- device
     mac TEXT,
     device_name TEXT,
-    device_id TEXT,          -- from filename
+    device_id TEXT,
 
     -- org structure
     workspace_id TEXT,
@@ -57,7 +62,15 @@ CREATE TABLE playback_events (
     ingested_at TIMESTAMPTZ DEFAULT now()
 );
 
--- indexes for Grafana
-CREATE INDEX idx_time ON playback_events (start_time);
-CREATE INDEX idx_device_id ON playback_events (device_id);
-CREATE INDEX idx_content ON playback_events (content_name);
+-- Convert to hypertable
+SELECT create_hypertable(
+    'playback_events',
+    'start_time',
+    chunk_time_interval => INTERVAL '1 day',
+    if_not_exists => TRUE
+);
+
+-- Indexes (optimized for Timescale usage)
+CREATE INDEX idx_playback_time ON playback_events (start_time DESC);
+CREATE INDEX idx_playback_device_time ON playback_events (device_id, start_time DESC);
+CREATE INDEX idx_playback_content_time ON playback_events (content_name, start_time DESC);
