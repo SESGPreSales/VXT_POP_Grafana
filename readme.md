@@ -72,11 +72,15 @@ This will pull all needed images from Docker Hub, then start the containers.
 1. Click on `01 Play Overview.`
 
 <img width="430" height="203" alt="image" src="https://github.com/user-attachments/assets/40e7cbeb-3ae3-4b9a-b241-24cb6515c672" />
+
 If you haven't added any csv before, your dashboard will be empty
+
 <img width="857" height="396" alt="image" src="https://github.com/user-attachments/assets/d05fa396-ceff-485f-8547-2968e752b111" />
 
 Add CSV files to the `csv_files` folder
+
 <img width="1088" height="408" alt="20260415-2010-21 6211124" src="https://github.com/user-attachments/assets/c9b85ca3-6ed3-4597-b01e-8bf0037d4885" />
+
 Wait a moment, the data is ingested automatically
 
 > [!NOTE]
@@ -85,11 +89,14 @@ Wait a moment, the data is ingested automatically
 If you already have some processed data, you should already see something now.
 
 Clicking on the colored bar of a content play visualization, or on a device content count, allows you to move to a detailed summary about that one content or device
+
 <img width="390" height="157" alt="image" src="https://github.com/user-attachments/assets/2536935a-e9f5-4e4a-8ef9-bad15cf54994" />
 
 ## How to modify dashboards
 
-the created dashboards are provisioned at every container start. Means the dashboards are "read-only".
+The created dashboards are provisioned at every container start. Means the dashboards are "read-only".
 
 To modify a dashboard, create a copy by using
-`Edit` then `Save dashboard` then `Save as copy`
+`Edit` then `Save dashboard` then `Save as copy.`
+
+<img width="227" height="70" alt="image" src="https://github.com/user-attachments/assets/2dbe2ae4-4010-49a2-852d-030bed7dd51e" />
