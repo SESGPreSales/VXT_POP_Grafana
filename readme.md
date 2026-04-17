@@ -43,7 +43,6 @@ You should see these folders and files:
 
 <img width="107" height="122" alt="image" src="https://github.com/user-attachments/assets/a50840dc-9409-4e3c-94fe-a4e9542d577d" />
 
-
 - csv_files
   - Place your CSV files in here. This folder is watched all the time, and the files are going to be processed in the next few seconds. Just wait...
 - init-db
@@ -66,7 +65,6 @@ This will pull all needed images from Docker Hub, then start the containers.
 
 <img width="216" height="209" alt="image" src="https://github.com/user-attachments/assets/8a3b975d-7731-41fe-b2a4-611e2d1c3e2b" />
 
-
 ## How to use
 
 1. Log in to Grafana using the default admin user (`admin` / `admin`). You are now forced to change the admin password. The new password will persist through container restarts.
@@ -84,7 +82,14 @@ Wait a moment, the data is ingested automatically
 > [!NOTE]
 > Check the date selector on the top right... Your exported data might be outside of the date range, so nothing is displayed.
 
-If you already have some processed data, you should already see something now. 
+If you already have some processed data, you should already see something now.
 
-Clicking on the colored bar of a content play visualization, or on a device content count, allows you to move to a detailed summary about that one content or device 
+Clicking on the colored bar of a content play visualization, or on a device content count, allows you to move to a detailed summary about that one content or device
 <img width="390" height="157" alt="image" src="https://github.com/user-attachments/assets/2536935a-e9f5-4e4a-8ef9-bad15cf54994" />
+
+## How to modify dashboards
+
+the created dashboards are provisioned at every container start. Means the dashboards are "read-only".
+
+To modify a dashboard, create a copy by using
+`Edit` then `Save dashboard` then `Save as copy`
